@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Goodie 💜</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #C8A2C8; /* Lilac */
+            color: white;
+        }
+
+        h1 {
+            margin-top: 60px;
+            font-size: 35px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 15px;
+            cursor: pointer;
+            border-radius: 20px;
+            border: none;
+            background-color: white;
+            color: #C8A2C8;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #E6CCFF;
+        }
+
+        #surprise {
+            display: none;
+            margin-top: 40px;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 250px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px white;
+        }
+
+        /* Falling flowers */
+        .flower {
+            position: fixed;
+            top: -10px;
+            font-size: 25px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Goodie, will you be my Valentine? 💜🤍</h1>
+
+    <button onclick="showLove()">Yes 🤍</button>
+    <button onclick="showLove()">Yes 💜</button>
+
+    <div id="surprise">
+        <h2>Yaaay Goodie!!! 💐🌸💜,best valentine ever💃🏽🥹😝😝</h2>
+        <img src="goodie.jpeg" alt="Beautiful Goodie">
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("surprise").style.display = "block";
+
+            // Create falling flowers
+            for (let i = 0; i < 30; i++) {
+                let flower = document.createElement("div");
+                flower.classList.add("flower");
+                flower.innerHTML = "🌸";
+                flower.style.left = Math.random() * 100 + "vw";
+                flower.style.animationDuration = (3 + Math.random() * 5) + "s";
+                document.body.appendChild(flower);
+            }
+        }
+    </script>
+
+</body>
+</html>
